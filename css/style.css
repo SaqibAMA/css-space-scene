@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2f3640;
+}
+
+body #scene {
+  border: 5px solid white;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+body #scene .star {
+  width: 5px;
+  height: 5px;
+  background-color: #f5f6fa;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  -webkit-animation: starsFloat 10s infinite;
+          animation: starsFloat 10s infinite;
+  z-index: 1;
+}
+
+body #scene .star:hover {
+  -webkit-animation: starsFloat 0s once;
+          animation: starsFloat 0s once;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+body #scene #planetShadow {
+  width: 300px;
+  height: 300px;
+  background-color: #e1b12c;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transform: translate(100px, 100px);
+          transform: translate(100px, 100px);
+  z-index: 2;
+  overflow: hidden;
+  -webkit-box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.2);
+}
+
+body #scene #planetShadow #planet {
+  width: inherit;
+  height: inherit;
+  background-color: #fbc531;
+  border-radius: 50%;
+  -webkit-transform: translate(-25px, -25px);
+          transform: translate(-25px, -25px);
+}
+
+body #scene #planetShadow #planet .craterShadow {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #e1b12c;
+  position: absolute;
+  z-index: 3;
+  -webkit-transform: translate(125px, 125px);
+          transform: translate(125px, 125px);
+  overflow: hidden;
+}
+
+body #scene #planetShadow #planet .craterShadow .crater {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background-color: #e1b12c;
+  -webkit-transform: translate(-5px, -5px);
+          transform: translate(-5px, -5px);
+  position: absolute;
+  z-index: 4;
+}
+
+body #scene .cloud {
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #f5f6fa;
+  position: absolute;
+  z-index: 5;
+  -webkit-box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.2);
+  -webkit-animation: cloudsFloat 2s infinite ease-in-out;
+          animation: cloudsFloat 2s infinite ease-in-out;
+}
+
+body #info {
+  width: 500px;
+  padding: 30px 0px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  color: #f5f6fa;
+  margin: 0 auto;
+}
+
+body #info a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+body #info a:hover {
+  text-decoration: none;
+}
+
+@-webkit-keyframes starsFloat {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 7px);
+            transform: translate(0px, 7px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes starsFloat {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 7px);
+            transform: translate(0px, 7px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes cloudsFloat {
+  0% {
+    margin: 0;
+  }
+  50% {
+    margin-top: 5px;
+  }
+  100% {
+    margin: 0;
+  }
+}
+
+@keyframes cloudsFloat {
+  0% {
+    margin: 0;
+  }
+  50% {
+    margin-top: 5px;
+  }
+  100% {
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

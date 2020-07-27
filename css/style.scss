@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$space-bg: #2f3640;
+$star-color: #f5f6fa;
+$planet: #fbc531;
+$planet-shadow: #e1b12c;
+$crater-shadow: darken($planet-shadow, 10%);
+
+body {
+    
+    background-color: $space-bg;
+    
+    #scene {
+
+        border: 5px solid white;
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        overflow: hidden;
+
+
+        .star {
+
+            width: 5px;
+            height: 5px;
+            background-color: $star-color;
+            border-radius: 50%;
+            position: absolute;
+            transition: 0.25s ease-in-out;
+            animation: starsFloat 10s infinite;
+            z-index: 1;
+
+            &:hover {
+                animation: starsFloat 0s once;
+                transform: scale(2);
+                transition: 0.25s ease-in-out;
+            }
+
+        }
+
+        #planetShadow {
+
+            width: 300px;
+            height: 300px;
+            background-color: $planet-shadow;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(100px, 100px);
+            z-index: 2;
+            overflow: hidden;
+            box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.2);
+
+
+            #planet {
+                width: inherit;
+                height: inherit;
+                background-color: $planet;
+                border-radius: 50%;
+                transform: translate(-25px, -25px);
+            
+
+                .craterShadow {
+
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    background-color: $planet-shadow;
+                    position: absolute;
+                    z-index: 3;
+                    transform: translate(125px, 125px);
+                    overflow: hidden;
+
+                    .crater {
+
+                        width: inherit;
+                        height: inherit;
+                        border-radius: 50%;
+                        background-color: $planet-shadow;
+                        transform: translate(-5px, -5px);
+                        position: absolute;
+                        z-index: 4;
+                    }
+
+                }
+            
+            
+            }
+
+
+        }
+
+        .cloud {
+            width: 150px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: $star-color;
+            position: absolute;
+            z-index: 5;
+            box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.2);
+            animation: cloudsFloat 2s infinite ease-in-out;
+        }
+
+    }
+
+
+
+    #info {
+        width: 500px;
+        padding: 30px 0px;
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        font-size: 13px;
+        color: $star-color;
+        margin: 0 auto;
+
+        a {
+            text-decoration: underline;
+            color: inherit;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
+
+}
+
+
+// Animation for stars
+@keyframes starsFloat {
+
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(5px, 5px);
+    }
+    50% {
+        transform: translate(0px, 7px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+// Animation for clouds
+@keyframes cloudsFloat {
+
+
+    0% {
+        margin: 0;
+    }
+    50% {
+        margin-top: 5px;
+    }
+    100% {
+        margin: 0;
+    }
+
+
+}
